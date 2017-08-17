@@ -1,20 +1,20 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 
 
 import sys
 
+
 try:
     from scapy.all import *
 except ImportError:
-    sys.stderr.write("Scapy module must be installed in order to run this script !!!\n")
-    sys.exit(37)   
+    print >> sys.stderr "Scapy module must be installed in order to run this script !!!\n"
+    sys.exit(1)   
    
 
 def usage ():
-    sys.stderr.write("%s  <-ip ip_address | -net net> \n"% (sys.argv[0]))
-    sys.stderr.write("%s -ip 10.0.0.37 | -net 192.168.1.0/24\n"% (sys.argv[0]))
-    sys.exit(37)
+    print sys.stderr "{0} <-ip ip_address | -net net> \n".format(sys.argv[0])
+    print sys.stderr "{0} -ip 10.0.0.37 | -net 192.168.1.0/24\n".format(sys.argv[0])
+    sys.exit(1)
 
 
 def is_net_sniffer(net):
