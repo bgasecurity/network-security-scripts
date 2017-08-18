@@ -39,7 +39,7 @@ class DetectSniffer(object):
     
         def __is_ip_sniffer(self, ip_address):
 
-                responses = srp1(Ether(dst=self.__fake_bcast) / ARP(op="who-has", pdst=ip_address), type=ETH_P_ARP, iface_hint=ip_address, timeout=1, verbose=0) 
+                responses = srp1(Ether(dst=self.__fake_bcast) / ARP(op="who-has", pdst=ip_address), type=ETH_P_ARP, iface_hint=ip_address, timeout=self.__timeout, verbose=0) 
 
                 if responses:
                         print "%s :OK"% (ip_address)
