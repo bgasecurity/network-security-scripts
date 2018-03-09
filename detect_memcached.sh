@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-
 RESET=`tput sgr0`
 RED=`tput setaf 1`
 GREEN=`tput setaf 2`
-
 
 function usage() {
 	echo "Usage: $0 [ -f <target_file>  -w <timeout> -t threat_count ]" 1>&2
